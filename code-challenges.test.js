@@ -37,7 +37,7 @@ describe("fibonacciSequence", () => {
     test("returns an array that has the with the length property value equals to the argument value passed in. The array contanis the value of the Fibonacce Sequence", () => {
 
       //an expect method, nested within the test block, calling on the fibonacciSequence() function, followed by the .toEqual() matcher that checks the expected output of the function return.
-      console.log(fibonacciSequence(num1))
+    //   console.log(fibonacciSequence(num1))
       expect(fibonacciSequence(num1)).toEqual([1, 1, 2, 3, 5, 8])
       expect(fibonacciSequence(num2)).toEqual([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
     })
@@ -72,10 +72,11 @@ const fibonacciSequence = (num) => {
 describe("onlyOdds", () => {
 
     // a test method, nested within the describe block, that in plain words, describes that the function does.
-    test("returns an array with only odd numbers as its elements", () => {
+    test("returns an sorted array with only odd numbers as its elements", () => {
     let fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
     let fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
       //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+      console.log(onlyOdds(fullArr1))
       expect(onlyOdds(fullArr1)).toEqual([-9, 7, 9, 199])
       expect(onlyOdds(fullArr2)).toEqual([-823, 7, 23])
     })
@@ -87,10 +88,14 @@ describe("onlyOdds", () => {
 // var fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
 // // Expected output: [-823, 7, 23]
 
-
 // b) Create the function that makes the test pass.
+// function will take in one argument as an array. 
+// use the filter method to filter out the elements of type 'number' and that are not divisible by 2 (num % 2 !== 0).
+// use the sort method -- we need to pass in a function as an argument to the .sort() method so that the method wont treat the elements as a string and end up sorting the numbers in a 'strange' order. We passed in the compare function function (a, b) {return a - b}. This will allow us to treat and compare all of the elements as numbers and to sort it properly.
 
-
+const onlyOdds = (arr) => {
+    return arr.filter(item => typeof item === 'number' && item % 2 !== 0).sort((a, b) => a - b)
+}
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 
