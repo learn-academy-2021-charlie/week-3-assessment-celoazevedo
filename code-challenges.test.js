@@ -37,6 +37,7 @@ describe("fibonacciSequence", () => {
     test("returns an array that has the with the length property value equals to the argument value passed in. The array contanis the value of the Fibonacce Sequence", () => {
 
       //an expect method, nested within the test block, calling on the fibonacciSequence() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+      console.log(fibonacciSequence(num1))
       expect(fibonacciSequence(num1)).toEqual([1, 1, 2, 3, 5, 8])
       expect(fibonacciSequence(num2)).toEqual([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
     })
@@ -48,11 +49,21 @@ describe("fibonacciSequence", () => {
 // Example input: 10
 // Expected output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
-
-
 // b) Create the function that makes the test pass.
+// Okay! This is a complex one! But I definetly saw the value of testing here! I looked up the function online and refactored it to match our expected result. It was a practical process to refactor the function using the test workflow.
 
+// here created a function called fibonacciSequence that takes in one argument (number). We declared two variable within the scope of the local scope of the function, fib that will be an array with the 2 starting values 0 and 1. finalArr is also an array where we have stored the starting (first) value of the fibonacci sequence which is always one. We used a forloop to perform some iteration starting on the second index (3rd element) of the fib[] array (which we at the moment do not have a value stored). Inside the loop we assigned to the 3rd element of the fib array fib[2] the value of the previous element fib[1] plus the value of the element at index 0 fib[0]. We than pushed the result of the addition to the finalArr. The iteration continued until the length of the finalArray was equal to the number passed in to the function. 
 
+const fibonacciSequence = (num) => {
+    let fib = [0, 1]
+    let finalArr = [1]
+
+    for(let i = 2; i <= num; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2]; 
+        finalArr.push(fib[i]);
+      }
+    return finalArr
+}
 
 // --------------------2) Create a function that takes in an array and returns a new array of only odd numbers sorted from least to greatest.
 
