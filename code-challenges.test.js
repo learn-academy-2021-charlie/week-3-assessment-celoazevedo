@@ -13,10 +13,34 @@
 
 // Reminder: The test will call your function
 
+// // Jest Syntax
+// // a describe method that lists the name of the function OR naming of the particular test.
+// describe("hello", () => {
+
+//     // a test method, nested within the describe block, that in plain words, describes that the function does.
+//     test("returns a string that says hi", () => {
+  
+//       //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+//       expect(hello()).toEqual("hi")
+//     })
+//   })
 
 // --------------------1) Create a function that takes in a number (greater than 2) and returns an array of that length containing the numbers of the Fibonacci.
 
 // a) Create a test with expect statements for each of the variables provided.
+
+// a describe method that lists the name of the function OR naming of the particular test.
+describe("fibonacciSequence", () => {
+    let num1 = 6
+    let num2 = 10
+    // a test method, nested within the describe block, that in plain words, describes what the function does.
+    test("returns an array that has the with the length property value equals to the argument value passed in. The array contanis the value of the Fibonacce Sequence", () => {
+
+      //an expect method, nested within the test block, calling on the fibonacciSequence() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+      expect(fibonacciSequence(num1)).toEqual([1, 1, 2, 3, 5, 8])
+      expect(fibonacciSequence(num2)).toEqual([1, 1, 2, 3, 5, 8, 13, 21, 34, 55])
+    })
+  })
 
 // Example input: 6
 // Expected output: [1, 1, 2, 3, 5, 8]
