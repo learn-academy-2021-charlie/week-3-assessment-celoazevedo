@@ -70,13 +70,10 @@ const fibonacciSequence = (num) => {
 
 // a describe method that lists the name of the function OR naming of the particular test.
 describe("onlyOdds", () => {
-
-    // a test method, nested within the describe block, that in plain words, describes that the function does.
     test("returns an sorted array with only odd numbers as its elements", () => {
     let fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
     let fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
-      //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
-      console.log(onlyOdds(fullArr1))
+    //   console.log(onlyOdds(fullArr1))
       expect(onlyOdds(fullArr1)).toEqual([-9, 7, 9, 199])
       expect(onlyOdds(fullArr2)).toEqual([-823, 7, 23])
     })
@@ -101,15 +98,25 @@ const onlyOdds = (arr) => {
 
 // a) Create a test with expect statements for each of the variables provided.
 
-var numbersToAdd1 = [2, 4, 45, 9]
-// Excpected output: [2, 6, 51, 60]
+describe("accumSum", () => {
+    test("returns an array with the acummulating sum adding each element to the previous", () => {
+    let numbersToAdd1 = [2, 4, 45, 9]
+    let numbersToAdd2 = [0, 7, -8, 12]
+    // let numbersToAdd3 = []
+    //   console.log(onlyOdds(fullArr1))
+      expect(accumSum(numbersToAdd1)).toEqual([2, 6, 51, 60])
+      expect(accumSum(numbersToAdd2)).toEqual([0, 7, -8, 12])
+    //   expect(onlyOdds(numbersToAdd3)).toEqual([])
+    })
+  })
 
-var numbersToAdd2 = [0, 7, -8, 12]
-// Expected output: [0, 7, -1, 11]
+// var numbersToAdd1 = [2, 4, 45, 9]
+// // Excpected output: [2, 6, 51, 60]
 
-var numbersToAdd3 = []
-// Expected output: []
+// var numbersToAdd2 = [0, 7, -8, 12]
+// // Expected output: [0, 7, -1, 11]
 
-
+// var numbersToAdd3 = []
+// // Expected output: []
 
 // b) Create the function that makes the test pass.
