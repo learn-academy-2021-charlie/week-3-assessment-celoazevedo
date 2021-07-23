@@ -32,6 +32,7 @@
         }
 
         drawCard = () => {
+          // destructuring the state object for easy access to the keys
           const {hand, suit, rank} = this.state
           let draw = `${rank[Math.floor(Math.random() * rank.length)]} ${suit[Math.floor(Math.random() * suit.length)]}`
           if(hand.indexOf(draw) === -1){
@@ -52,9 +53,13 @@
           return(
             <>
               <h1>Draw a Card</h1>
+              // Error here: we need to pass in our data or behaivior so our Card component can use it. We are passing in our state property hand, 
+              // we can now access this property in our Card component as props! React is super cool!
+              //// !!! this is a huge take away for me !!!
               <Card
                 drawCard={this.drawCard}
                 shuffle={this.shuffle}
+                hand={this.state.hand}
               />
             </>
           )
@@ -79,13 +84,18 @@
           }
           return(
             <>
-              <button onClick={}>
+            // Error here.
+            // we were getting an error of drawCard is not defined -- which means that there was not a value for the onClick attribute. The code was not being able to access the drawCard method.
+            // here was the first error - we need to access the method in the parent component App using props, and Using the keyword .this that refers to the property part of the instance of the class (that specific object).
+              <button onClick={this.props.drawCard}>
                 Click to Draw a Card
               </button>
-              <button onClick={shuffle}>
+              // Error here. Same scenario as above.
+              <button onClick={this.props.shuffle}>
                 Return Cards and Shuffle Deck
               </button>
               <div style={handStyles}>
+                // because we passed in the hand property from or parent component state object to our Card componenet call. NOWWW we can access the hand property by referencing the variable using props!
                 {this.props.hand.map((card, index) => {
                   return (
                     <div style={cardStyles} key={index}>
