@@ -95,18 +95,19 @@ const onlyOdds = (arr) => {
 }
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
-
 // a) Create a test with expect statements for each of the variables provided.
 
 describe("accumSum", () => {
     test("returns an array with the acummulating sum adding each element to the previous", () => {
     let numbersToAdd1 = [2, 4, 45, 9]
     let numbersToAdd2 = [0, 7, -8, 12]
-    // let numbersToAdd3 = []
-    //   console.log(onlyOdds(fullArr1))
+    let numbersToAdd3 = []
+    // console.log(accumSum(numbersToAdd1))
+    // console.log(accumSum(numbersToAdd2))
+    // console.log(accumSum(numbersToAdd3))
       expect(accumSum(numbersToAdd1)).toEqual([2, 6, 51, 60])
-      expect(accumSum(numbersToAdd2)).toEqual([0, 7, -8, 12])
-    //   expect(onlyOdds(numbersToAdd3)).toEqual([])
+      expect(accumSum(numbersToAdd2)).toEqual([0, 7, -1, 11])
+      expect(onlyOdds(numbersToAdd3)).toEqual([])
     })
   })
 
@@ -120,3 +121,14 @@ describe("accumSum", () => {
 // // Expected output: []
 
 // b) Create the function that makes the test pass.
+// this one was a doozie but with the help of Google we got the test to pass. We created a function that takes in one argument as an array. We declared an variable inside the function local scope (hope to be using this term the right way here...) and assigned it to an empty array. We used the reduce built in array method to iterated through the array. Reduce gives access to the current element value, the sum of the current element with the next element in the array, and the index position of the current element. What is cool here is that before moving to the next element, we are storing the sum of each consecutive element in the newArr variable. (... this is a bit of magic to me...) But we go out test working!
+const accumSum = (arr) => {
+    let newArr = []
+    if (arr.length === 0) {
+        return arr
+    } else {
+    arr.reduce((accum, current, index) => {return newArr[index] = accum + current}, 0)
+     // console.log(newArr)
+    return newArr
+    }
+}
