@@ -49,7 +49,7 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 6. STRETCH: What is an anonymous function in JavaScript?
 
-  Your answer: an anonymous function is a function without a name (hehe!) in javascript we tipically use anonymous functions as callback functions.
+  Your answer: an anonymous function is a function without a name (hehe!). In javascript we tipically use anonymous functions as callback functions.
 
   () => {}
 
@@ -62,12 +62,12 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 ## Looking Ahead: Terms for Next Week
 
-1. Conditional rendering:
+1. Conditional rendering: in React we can use the conditional operators (if or the ternatry operators) to decide what kind of state a specific element will be in (what values it's properties will have at a specific time) and React will render it if meets the condition.
 
-2. Ruby:
+2. Ruby: is a dynamic programing language. I think that by dinamic they mean that you can declare varibales and reassign them values as you please. Apparently Ruby has an elegant syntax and it is easy to read. I wonder if when they say easy they are just comparing it to JS.
 
-3. Object oriented programming:
+3. Object oriented programming: OOP is a programing paradigm. It is a set of rules that programers agreed upon to keep the code clean, readable (you can easily find what you want in the code), scalable, and prevents major headaches if people need to make changes to the code.
 
-4. Ruby hash:
+4. Ruby hash: a collection of key value pairs
 
-5. Ruby blocks:
+5. Ruby blocks: I think that this is like a code block. It envelops a chunck of code.
