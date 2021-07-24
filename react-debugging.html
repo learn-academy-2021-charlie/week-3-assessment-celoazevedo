@@ -53,9 +53,11 @@
           return(
             <>
               <h1>Draw a Card</h1>
+              {
               // Error here: we need to pass in our data or behaivior so our Card component can use it. We are passing in our state property hand, 
               // we can now access this property in our Card component as props! React is super cool!
               //// !!! this is a huge take away for me !!!
+              }
               <Card
                 drawCard={this.drawCard}
                 shuffle={this.shuffle}
