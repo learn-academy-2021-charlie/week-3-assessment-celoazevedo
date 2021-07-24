@@ -84,18 +84,24 @@
           }
           return(
             <>
+           {
             // Error here.
             // we were getting an error of drawCard is not defined -- which means that there was not a value for the onClick attribute. The code was not being able to access the drawCard method.
             // here was the first error - we need to access the method in the parent component App using props, and Using the keyword .this that refers to the property part of the instance of the class (that specific object).
+           }
               <button onClick={this.props.drawCard}>
                 Click to Draw a Card
               </button>
-              // Error here. Same scenario as above.
+              {
+                // Error here. Same scenario as above.
+              }
               <button onClick={this.props.shuffle}>
                 Return Cards and Shuffle Deck
               </button>
               <div style={handStyles}>
+                {
                 // because we passed in the hand property from or parent component state object to our Card componenet call. NOWWW we can access the hand property by referencing the variable using props!
+                }
                 {this.props.hand.map((card, index) => {
                   return (
                     <div style={cardStyles} key={index}>
