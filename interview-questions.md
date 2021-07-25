@@ -72,6 +72,6 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 3. Object oriented programming: OOP is a programing paradigm. It is a set of rules that programers agreed upon to keep the code clean, readable (you can easily find what you want in the code), scalable, and prevents major headaches if people need to make changes to the code.
 
-4. Ruby hash: a collection of key value pairs
+4. Ruby hash: a collection of key value pairs. Hash is a lot like arrays but without the indexing to refer to each element. Instead, you refer to each element by its key. 
 
 5. Ruby blocks: I think that this is like a code block. It envelops a chunck of code.
